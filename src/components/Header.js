@@ -1,7 +1,8 @@
 import React from "react";
-import Input from "./Input";
 import { Link } from "react-router-dom";
-import imgAdd from "./add.png";
+
+import Input from "./Input";
+import imgAdd from "../img/add.png";
 
 const Header = ({ setSearch }) => {
   return (

@@ -3,30 +3,46 @@ import Axios from "axios";
 
 const AddImage = () => {
   const [dataImage, setDataImage] = useState({});
+  const [validData, setValidData] = useState({});
   const [name, setName] = useState("");
-  const [error, setError] = useState(false);
+  const [messague, setMessague] = useState("");
+  const [errorForm, setErrorFrom] = useState(false);
 
-  const getName = (e) => {
+  const getName = e => {
     setName(e.target.value);
   };
-  const getFile = (e) => {
+  const getFile = e => {
     setDataImage(e.target.files[0]);
+    setValidData(e.target.files);
   };
 
   const saveImage = async e => {
+    
     e.preventDefault();
 
-    if(name.trim() === '' || Object.keys(dataImage).length === 0){
-       setError(true)
-       return
+    if (name.trim() === "" || Object.keys(validData).length === 0) {
+      setErrorFrom(true);
+      setMessague("Todos los campos son requeridos")
+      return;
     }
-    setError(false)
+
+    const validExtensions = ["png", "jpg", "gif", "jpeg"];
+    const nameImage = dataImage.name.split(".");
+    const extensionImage = nameImage[nameImage.length - 1];
+
+    if (validExtensions.indexOf(extensionImage) < 0) {
+      setErrorFrom(true);
+      setMessague("Extension Invalida")
+      return;
+    }
+
+    setErrorFrom(false);
 
     const fd = new FormData();
     fd.append("dataImage", dataImage);
     fd.append("name", name);
     try {
-       await Axios({
+      await Axios({
         url: "http://localhost:8282/createImage",
         method: "POST",
         data: fd,
@@ -35,10 +51,11 @@ const AddImage = () => {
       window.location.href = "/";
     } catch (error) {}
   };
+
   return (
-    <div className="hola">
+    <div className="addImage">
       <div className="formImage">
-        {error  ? <h2>Todos los campos son requeridos</h2> : null}
+        {errorForm ? <h2 className="error-AddImage">{messague}</h2> : null}
         <div className="formImage-text">
           <label>Nombre</label>
           <input

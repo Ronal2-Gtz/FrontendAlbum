@@ -67,32 +67,41 @@ body {
 /* Fin de barra de navegacion  */
 /* Image */
 
-.linea{
- width: 100%;
- height: auto;
-}
-.container-images{
+.contenedor-imagenes{
   display: flex;
   width: 85%;
   margin: auto;
+  justify-content: space-around;
   flex-wrap: wrap;
-  border-radius: 3px;
 }
 
-.container-images .image{
+.contenedor-imagenes .imagen{
   width: 32%;
   position: relative;
+  height: 300px;
+  margin-bottom: 1rem;
+  border: 5px solid #33333388;
+  box-shadow: 9px 9px 23px -17px rgba(0,0,0,0.75);
+  border-radius: 5px;
 }
 
-.image img {
+.imagen img{
   width: 100%;
-  height: auto;
+  height: 100%;
+  display: block;
   object-fit: cover;
 }
 
 /* Fin Image */
-
 /* Form Image */
+
+.addImage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
 .formImage {
   width: 50%;
   background-color: #fff;
@@ -119,7 +128,8 @@ body {
   margin: 0 auto;
   font-size: 15px;
   position: relative;
-  
+  cursor: pointer;
+  padding: 1rem;
 }
 
 .formImage-button{
@@ -146,18 +156,21 @@ label {
   margin: 10px auto;
   font-size: 25px;
 }
-.hola{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60vh;
-}
+
 
 .formImage-text,
 .formImage-file {
   display: flex;
   flex-direction: column;
   
+}
+
+.error-AddImage{
+  background: #E42121;
+  color: #ffffff;
+  padding: 5px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 /* Fin form Image */
@@ -190,7 +203,7 @@ label {
 
 .viewImage-button{
   padding: .5rem;
-  width: 10%;
+  width: 15%;
   font-size: 20px;
   cursor: pointer;
   background:#ffffff;

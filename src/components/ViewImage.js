@@ -18,7 +18,7 @@ const ViewImage = () => {
   }, [id]);
 
   const deleteImage = async (e) => {
-    e.preverDefault()
+    e.preventDefault()
     confirmAlert({
       title: "Advertencia",
       message: "Seguro que deseas Eliminar la imagen?",
@@ -58,7 +58,7 @@ const ViewImage = () => {
           <h2 className="viewImage-h2">
             Imagen creada el: {fullDate}-({format(date)})
           </h2>
-          <button className="viewImage-button" onClick={() => deleteImage()}>
+          <button className="viewImage-button" onClick={deleteImage}>
             Eliminar
           </button>
         </div>
