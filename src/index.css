@@ -70,19 +70,19 @@ body {
 .contenedor-imagenes{
   display: flex;
   width: 85%;
-  margin: auto;
-  justify-content: space-around;
+  margin: 0 auto;
   flex-wrap: wrap;
+ 
 }
 
 .contenedor-imagenes .imagen{
   width: 32%;
   position: relative;
   height: 300px;
-  margin-bottom: 1rem;
-  border: 5px solid #33333388;
-  box-shadow: 9px 9px 23px -17px rgba(0,0,0,0.75);
-  border-radius: 5px;
+  margin:  0 1rem 1rem 0;
+  border: 1px solid #99999988;
+  box-shadow: 0px 0px 10px -3px rgba(36, 36, 36, 0.75);
+  border-radius: 2px;
 }
 
 .imagen img{

@@ -47,7 +47,6 @@ const AddImage = () => {
         method: "POST",
         data: fd,
       });
-
       window.location.href = "/";
     } catch (error) {}
   };
