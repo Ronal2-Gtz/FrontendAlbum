@@ -8,7 +8,7 @@ const Header = ({ setSearch }) => {
   return (
     <div className="nav">
       <Link to="/" className="nav-logo">
-        [A]lbum [P]erron
+        [A]lbum [R]2
       </Link>
       <div className="nav-add">
         <Link to="/addImage" className="nav-link">
